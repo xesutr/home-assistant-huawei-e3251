@@ -1,0 +1,11 @@
+{
+  "domain": "huawei_e3251",
+  "name": "Huawei E3251 HiLink SMS",
+  "codeowners": ["@xesutr"],
+  "config_flow": true,
+  "documentation": "https://github.com/xesutr/home-assistant-huawei-e3251",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/xesutr/home-assistant-huawei-e3251/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
