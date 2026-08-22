@@ -1,0 +1,48 @@
+send_sms:
+  name: SMS Gönder
+  description: Huawei E3251 modülü üzerinden hedef numaralara veya rehber listesine SMS gönderir.
+  fields:
+    target:
+      name: Hedef Numara
+      description: "SMS gönderilecek telefon numarası (tek veya virgülle ayrılmış çoklu). Boş bırakılırsa helper okunur."
+      required: false
+      example: "05055957179"
+      selector:
+        text:
+          multiline: false
+    message:
+      name: Mesaj
+      description: "Gönderilecek mesaj metni."
+      required: true
+      example: "Sistem uyarısı!"
+      selector:
+        text:
+          multiline: true
+
+delete_sms:
+  name: Kayıtlı SMS Sil
+  description: "Veritabanından (SQLite) veya hafızadan belirtilen ID veya Gönderen/Tarih bilgisine sahip SMS kaydını siler."
+  fields:
+    id:
+      name: SMS ID
+      description: "Veritabanındaki SMS kayıt numarası (Örn: 105)."
+      required: false
+      example: 105
+      selector:
+        number:
+          min: 1
+          mode: box
+    sender:
+      name: Gönderen Numarası
+      description: "Mesajı gönderen telefon numarası (Fallback silme yöntemi)."
+      required: false
+      example: "+905055957179"
+      selector:
+        text:
+    timestamp:
+      name: Tarih Damgası
+      description: "Mesajın alındığı tarih ve saat bilgisi (Fallback silme yöntemi)."
+      required: false
+      example: "07.08.2026 13:20:18"
+      selector:
+        text:
